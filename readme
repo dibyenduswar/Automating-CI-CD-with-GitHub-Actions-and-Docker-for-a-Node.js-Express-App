@@ -1,0 +1,31 @@
+# Node.js Express CI/CD with GitHub Actions and Docker
+
+This repository demonstrates a CI/CD pipeline for a Node.js Express application, leveraging GitHub Actions and Docker for automated building, testing, containerization, and deployment to a remote server.
+
+## Features
+
+- **Automated Build and Test**: Automatically builds and tests the application upon each push to the `master` branch.
+- **Docker Image Creation**: Packages the application into a Docker container and pushes it to Docker Hub.
+- **Remote Deployment**: Uses `appleboy/ssh-action` for secure SSH-based deployment, stopping existing containers and running the updated image.
+- **Secrets Management**: Securely handles credentials like SSH keys and Docker Hub credentials with GitHub Secrets.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+1. **Node.js and npm**: Ensure Node.js and npm are installed.
+2. **Docker**: Install Docker to create and run containers.
+3. **GitHub Secrets Setup**:
+   - Configure repository secrets for sensitive data, such as:
+     - `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN` for Docker Hub authentication.
+     - `HOST`, `HOST_IP`, `USERNAME`, `KEY`, and `PORT` for SSH connection details.
+
+### Basic Express App Setup
+
+1. **Initialize a Node.js Project**:
+   ```bash
+   mkdir cicd-express-app
+   cd cicd-express-app
+   npm init -y

@@ -1,0 +1,9 @@
+version: '3.9'
+services:  
+  #nodejs service
+  node_api_service:
+    build: .  #means its build the dockerfile
+    ports:
+      - 80:3000
+    environment:
+      PORT: 3000    
